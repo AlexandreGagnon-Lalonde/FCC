@@ -102,3 +102,65 @@
   let myString = "Hello, World!";
   let myRegex = /Hello/;
   let result = myRegex.test(myString); // Change this line
+
+// Restrict Possible Usernames
+  let username = "JackOfAllTrades";
+  let userCheck = /^[a-z](\d{2,}|[a-z]+\d*)$/i; // Change this line
+  let result = userCheck.test(username);
+
+// Match Whitespace
+  let sample = "Whitespace is important in separating words";
+  let countWhiteSpace = /\s/g; // Change this line
+  let result = sample.match(countWhiteSpace);
+
+// Match Non-Whitespace Characters
+  let sample = "Whitespace is important in separating words";
+  let countNonWhiteSpace = /\S/g; // Change this line
+  let result = sample.match(countNonWhiteSpace);
+
+// Specify Upper and Lower Number of Matches
+  let ohStr = "Ohhh no";
+  let ohRegex = /Oh{3,6} no/i; // Change this line
+  let result = ohRegex.test(ohStr);
+
+// Specify Only the Lower Number of Matches
+  let haStr = "Hazzzzah";
+  let haRegex = /Haz{4,}ah/; // Change this line
+  let result = haRegex.test(haStr);
+
+// Specify Exact Number of Matches
+  let timStr = "Timmmmber";
+  let timRegex = /Tim{4}ber/; // Change this line
+  let result = timRegex.test(timStr);
+
+// Check for All or None
+  let favWord = "favorite";
+  let favRegex = /favou?rite/; // Change this line
+  let result = favRegex.test(favWord);
+
+// Positive and Negative Lookahead
+  let sampleWord = "astronaut";
+  let pwRegex = /^\D(?=\w{5,})(?=\w*\d{2})/gi; // Change this line
+  let result = pwRegex.test(sampleWord);
+
+// Check For Mixed Grouping of Characters
+  let myString = "Eleanor Roosevelt";
+  let myRegex = /(Eleanor|Franklin D.) Roosevelt/; // Change this line
+  let result = myRegex.test(myString); // Change this line
+
+// Reuse Patterns Using Capture Groups
+  let repeatNum = "42 42 42";
+  let reRegex = /^(\d{2,})(\s)\1\2\1$/g; // Change this line
+  let result = reRegex.test(repeatNum);
+  console.log(repeatNum.match(reRegex))
+
+// Use Capture Groups to Search and Replace
+  let str = "one two three";
+  let fixRegex = /(one)\s(two)\s(three)/; // Change this line
+  let replaceText = "$3 $2 $1"; // Change this line
+  let result = str.replace(fixRegex, replaceText);
+
+// Remove Whitespace from Start and End
+  let hello = "   Hello, World!  ";
+  let wsRegex = /H\w+\S\s\w+\!/; // Change this line
+  let result = hello.match(wsRegex) // Change this line
