@@ -110,3 +110,51 @@
   titleCase("I'm a little tea pot");
 
 // Slice and Splice
+  function frankenSplice(arr1, arr2, n) {
+    if (n === 0) {
+      return [...arr2, ...arr1]
+    } else {
+      let firstPart = arr2.slice(0,n);
+      let lastPart = arr2.slice(n,arr2.length)
+      return [...firstPart, ...arr1, ...lastPart]
+    }
+  }
+
+  frankenSplice([1, 2, 3], [4, 5, 6], 1);
+
+// Falsy Bouncer
+  function bouncer(arr) {
+    let newArr = [];
+    arr.forEach(value => {
+      if (value) {
+        newArr.push(value)
+      }
+    });
+    return newArr
+  }
+
+  bouncer([7, "ate", "", false, 9]);
+
+// Where do I Belong
+  function getIndexToIns(arr, num) {
+    arr.push(num)
+    return arr.sort(function(a, b){return a-b}).indexOf(num);
+  }
+
+  getIndexToIns([40, 60], 50);
+
+// Mutations
+  function mutation(arr) {
+    let checker = true;
+      arr[1].split('').forEach(letter => {
+        if (!arr[0].toLowerCase().split('').includes(letter.toLowerCase())) {
+          checker = false;
+        }
+      }
+    )
+    return checker;
+  }
+
+  mutation(["hello", "hey"]);
+
+// Chunky Monkey
