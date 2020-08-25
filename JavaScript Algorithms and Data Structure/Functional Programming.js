@@ -634,3 +634,43 @@
   console.log(squaredIntegers);
 
 // Sort an Array Alphabetically using the sort Method
+  function alphabeticalOrder(arr) {
+    // Only change code below this line
+    return arr.sort((a,b) => {
+      return a === b ? 0 : a < b ? -1 : 1;
+    })
+
+    // Only change code above this line
+  }
+  alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
+
+// Return a Sorted Array Without Changing the Original Array
+  var globalArray = [5, 6, 3, 2, 9];
+  function nonMutatingSort(arr) {
+    // Only change code below this line
+    return [].concat(arr).sort((a,b) => {
+      return a === b ? 0 : a < b ? -1 : 1;
+    })
+    // Only change code above this line
+  }
+  nonMutatingSort(globalArray);
+
+// Split a String into an Array Using the split Method
+  function splitify(str) {
+    // Only change code below this line
+    return str.split(/[^a-zA-Z]/g)
+
+    // Only change code above this line
+  }
+  splitify("Hello World,I-am code");
+
+// Combine an Array into a String Using the join Method
+  function sentensify(str) {
+    // Only change code below this line
+    return str.split(/[^a-zA-Z]/g).join(' ')
+
+    // Only change code above this line
+  }
+  sentensify("May-the-force-be-with-you");
+
+// Apply Functional Programming to Convert Strings to URL Slugs
