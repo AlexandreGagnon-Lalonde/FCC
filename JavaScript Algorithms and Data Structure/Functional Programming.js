@@ -674,3 +674,39 @@
   sentensify("May-the-force-be-with-you");
 
 // Apply Functional Programming to Convert Strings to URL Slugs
+  // Only change code below this line
+  function urlSlug(title) {
+    return title.toLowerCase().split(/\s/g).filter(e => e !== '').join('-')
+  }
+  // Only change code above this line
+
+// Use the every Method to Check that Every Element in an Array Meets a Criteria
+  function checkPositive(arr) {
+    // Only change code below this line
+    return arr.every(value => value >= 0)
+
+    // Only change code above this line
+  }
+  checkPositive([1, 2, 3, -4, 5]);
+
+// Use the some Method to Check that Any Elements in an Array Meet a Criteria
+  function checkPositive(arr) {
+    // Only change code below this line
+    return arr.some(value => value >= 0)
+
+    // Only change code above this line
+  }
+  checkPositive([1, 2, 3, -4, 5]);
+
+// Introduction to Currying and Partial Application
+  function add(x) {
+    // Only change code below this line
+    return function(y) {
+      return function(z) {
+        return x + y + z
+      }
+    }
+
+    // Only change code above this line
+  }
+  add(10)(20)(30);
