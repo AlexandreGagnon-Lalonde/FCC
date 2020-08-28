@@ -36,3 +36,25 @@
   destroyer([1, 2, 3, 1, 2, 3], 2, 3);
 
 // Wherefore art thou
+  function whatIsInAName(collection, source) {
+    var arr = [];
+    // Only change code below this line
+    let sourceKeys = Object.keys(source)
+    for (let i = 0; i < collection.length; i++) {
+      let checker = true;
+      for (let j = 0; j < sourceKeys.length; j++) {
+        if (collection[i][sourceKeys[j]] !== source[sourceKeys[j]]) {
+          checker = false;
+        }
+      }
+      if (checker) {
+        arr.push(collection[i])
+      }
+    }
+    // Only change code above this line
+    return arr;
+  }
+
+  whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+
+// Spinal Tap Case
