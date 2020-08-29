@@ -58,3 +58,20 @@
   whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
 
 // Spinal Tap Case
+  function spinalCase(str) {
+    return str
+      .split(/(?=[A-Z])|(\W)|(\s)/g)
+      .filter((x) => (x ? x.length > 1 : null))
+      .map((word) => {
+        if (word.includes("_")) {
+          return word.replace("_", "").toLowerCase();
+        } else {
+          return word.toLowerCase();
+        }
+      })
+      .join("-");
+  }
+
+  spinalCase("This Is Spinal Tap");
+
+// Pig Latin
