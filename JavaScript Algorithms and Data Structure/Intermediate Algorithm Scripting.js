@@ -97,4 +97,34 @@
   translatePigLatin("consonant");
 
 // Search and Replace
+  function myReplace(str, before, after) {
+    console.log(before.charAt(0) === before.charAt(0).toUpperCase())
+    if (before.charAt(0) === before.charAt(0).toUpperCase()) {
+      after = after.charAt(0).toUpperCase() + after.substring(1)
+    } else {
+      after = after.charAt(0).toLowerCase() + after.substring(1)
+    }
+    return str.replace(before, after);
+  }
 
+  myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+
+// DNA Pairing
+  function pairElement(str) {
+    return str.split("").map((letter) => {
+      switch (letter) {
+        case "A":
+          return [letter, "T"];
+        case "T":
+          return [letter, "A"];
+        case "C":
+          return [letter, "G"];
+        case "G":
+          return [letter, "C"];
+      }
+    });
+  }
+
+  pairElement("GCG");
+
+// 
