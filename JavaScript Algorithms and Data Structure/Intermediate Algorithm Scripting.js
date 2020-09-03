@@ -140,3 +140,19 @@
   fearNotLetter("abce");
 
 // Sorted Union
+  function uniteUnique(arr) {
+    let args = [...arguments];
+    let answer = [];
+    args.forEach((array) => {
+      array.forEach((number) => {
+        if (!answer.includes(number)) {
+          answer.push(number);
+        }
+      });
+    });
+    return answer.sort((a, b) => a + b);
+  }
+
+  uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+
+// Convert HTML Entities
