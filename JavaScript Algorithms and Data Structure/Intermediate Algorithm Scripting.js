@@ -156,3 +156,34 @@
   uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 
 // Convert HTML Entities
+  function convertHTML(str) {
+    return str
+      .split("")
+      .map((symbol) => {
+        switch (symbol) {
+          case "&": {
+            return "&amp;";
+          }
+          case "<": {
+            return "&lt;";
+          }
+          case ">": {
+            return "&gt;";
+          }
+          case '"': {
+            return "&quot;";
+          }
+          case "'": {
+            return "&apos;";
+          }
+          default: {
+            return symbol;
+          }
+        }
+      })
+      .join("");
+  }
+
+  convertHTML("Dolce & Gabbana");
+
+// 
