@@ -186,4 +186,20 @@
 
   convertHTML("Dolce & Gabbana");
 
-// 
+// Sum All Odd Fibonacci Numbers
+function sumFibs(num) {
+  if (num === 1) {
+    return 1;
+  }
+  let fibArray = [1, 1];
+  for (let i = 0; i < num - 2; i++) {
+    fibArray.push(fibArray[i] + fibArray[i + 1]);
+  }
+  return fibArray
+    .filter((number) => number <= num && number % 2 === 1)
+    .reduce((a, b) => a + b);
+}
+
+sumFibs(4);
+
+// Sum All Primes
