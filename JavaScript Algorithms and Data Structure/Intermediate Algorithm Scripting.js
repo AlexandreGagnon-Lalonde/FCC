@@ -203,3 +203,24 @@ function sumFibs(num) {
 sumFibs(4);
 
 // Sum All Primes
+  function sumPrimes(num) {
+    let primeArray = [];
+
+    for (let i = 2; i <= num; i++) {
+      let checker = true;
+      for (let j = 1; j <= i; j++) {
+        if (i % j === 0 && j !== 1 && j !== i) {
+          checker = false;
+        }
+      }
+      if (checker) {
+        primeArray.push(i);
+      }
+    }
+    console.log(primeArray);
+    return primeArray.reduce((a, b) => a + b);
+  }
+
+  sumPrimes(10);
+
+// 
