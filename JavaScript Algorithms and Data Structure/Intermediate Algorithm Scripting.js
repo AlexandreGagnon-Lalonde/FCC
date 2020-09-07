@@ -223,4 +223,32 @@ sumFibs(4);
 
   sumPrimes(10);
 
-// 
+// Smallest Common Multiple
+  function smallestCommons(arr) {
+    let checker = false;
+    let i = 1;
+    while (!checker) {
+      if (arr[0] > arr[1]) {
+        checker = true;
+        for (let j = arr[1]; j <= arr[0]; j++) {
+          if (i % j !== 0) {
+            checker = false;
+          }
+        }
+      } else {
+        checker = true;
+        for (let j = arr[0]; j <= arr[1]; j++) {
+          if (i % j !== 0) {
+            checker = false;
+          }
+        }
+      }
+      i++;
+    }
+    console.log(i);
+    return i - 1;
+  }
+
+  smallestCommons([1, 5]);
+
+// Drop it
