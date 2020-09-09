@@ -252,3 +252,38 @@ sumFibs(4);
   smallestCommons([1, 5]);
 
 // Drop it
+  function dropElements(arr, func) {
+    if (arr.find(func)) {
+      return arr.slice(arr.indexOf(arr.find(func)));
+    } else {
+      return [];
+    }
+  }
+
+  dropElements([1, 2, 3], function (n) {
+    return n < 3;
+  });
+
+// Steamroller
+  function steamrollArray(arr) {
+    return arr
+      .join("")
+      .replace(/,/, "")
+      .replace(/\[object Object\]/, "{}")
+      .split("")
+      .filter((element) => element !== "}")
+      .map((element) => {
+        console.log(element);
+        if (element === "{") {
+          return {};
+        } else if (element === "}") {
+          return;
+        } else if (parseInt(element) >= 0 && parseInt(element) <= 9) {
+          return parseInt(element);
+        } else {
+          return element;
+        }
+      });
+  }
+
+  steamrollArray([1, [2], [3, [[4]]]]);
