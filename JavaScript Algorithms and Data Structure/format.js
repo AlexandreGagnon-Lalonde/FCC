@@ -1,20 +1,13 @@
-function translatePigLatin(str) {
-  let wordArr = str.split("");
-  if (
-    wordArr[0] === "a" ||
-    wordArr[0] === "e" ||
-    wordArr[0] === "i" ||
-    wordArr[0] === "o" ||
-    wordArr[0] === "u"
-  ) {
-    return str + "way";
-  } else {
-    return (
-      str.slice(str.match(/[^aeiou]+/)[0].length) +
-      str.match(/[^aeiou]+/)[0] +
-      "ay"
-    );
-  }
+function truthCheck(collection, pre) {
+  return collection.every((obj) => obj[pre]);
 }
 
-translatePigLatin("consonant");
+truthCheck(
+  [
+    { user: "Tinky-Winky", sex: "male" },
+    { user: "Dipsy", sex: "male" },
+    { user: "Laa-Laa", sex: "female" },
+    { user: "Po", sex: "female" },
+  ],
+  "sex"
+);
