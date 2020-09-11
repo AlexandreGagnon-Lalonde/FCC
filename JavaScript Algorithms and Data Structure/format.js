@@ -1,13 +1,11 @@
-function truthCheck(collection, pre) {
-  return collection.every((obj) => obj[pre]);
+function addTogether() {
+  let args = Array.from(arguments);
+  console.log(args);
+  return args.some((arg) => typeof arg !== "number")
+    ? undefined
+    : args.length > 1
+    ? args[0] + args[1]
+    : (n) => (typeof n !== "number" ? undefined : n + args[0]);
 }
 
-truthCheck(
-  [
-    { user: "Tinky-Winky", sex: "male" },
-    { user: "Dipsy", sex: "male" },
-    { user: "Laa-Laa", sex: "female" },
-    { user: "Po", sex: "female" },
-  ],
-  "sex"
-);
+addTogether(2, 3);
