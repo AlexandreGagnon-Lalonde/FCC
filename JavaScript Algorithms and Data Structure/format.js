@@ -1,37 +1,14 @@
-var Person = function (firstAndLast) {
-  // Only change code below this line
-  // Complete the method below and implement the others similarly
-  this.getFullName = function () {
-    return this.fullName
-      ? this.fullName
-      : firstAndLast.split(" ")[0] + " " + firstAndLast.split(" ")[1];
-  };
-  this.getFirstName = function () {
-    return this.firstName ? this.firstName : firstAndLast.split(" ")[0];
-  };
-  this.getLastName = function () {
-    return this.lastName ? this.lastName : firstAndLast.split(" ")[1];
-  };
-  this.setFirstName = function (first) {
-    this.firstName = first;
-    this.lastName = this.lastName ? this.lastName : firstAndLast.split(" ")[1];
-    this.fullName = this.firstName + " " + this.lastName;
-  };
-  this.setLastName = function (last) {
-    this.lastName = last;
-    this.firstName = this.firstName
-      ? this.firstName
-      : firstAndLast.split(" ")[0];
+function orbitalPeriod(arr) {
+  var GM = 398600.4418;
+  var earthRadius = 6367.4447;
+  return arr.map((obj) => {
+    var orbitsLengthPower3 = Math.pow(obj.avgAlt + earthRadius, 3);
+    var rightHand = Math.pow(orbitsLengthPower3 / GM, 0.5);
+    var orbitalPer = Math.round(2 * Math.PI * rightHand);
+    obj.orbitalPeriod = orbitalPer;
+    delete obj.avgAlt;
+    return obj;
+  });
+}
 
-    this.fullName = this.firstName + " " + this.lastName;
-  };
-  this.setFullName = function (firstAndLast) {
-    this.firstName = firstAndLast.split(" ")[0];
-    this.lastName = firstAndLast.split(" ")[1];
-    this.fullName = this.firstName + " " + this.lastName;
-  };
-  return firstAndLast;
-};
-
-var bob = new Person("Bob Ross");
-bob.getFullName();
+orbitalPeriod([{ name: "sputnik", avgAlt: 35873.5553 }]);
