@@ -1,14 +1,20 @@
-function orbitalPeriod(arr) {
-  var GM = 398600.4418;
-  var earthRadius = 6367.4447;
-  return arr.map((obj) => {
-    var orbitsLengthPower3 = Math.pow(obj.avgAlt + earthRadius, 3);
-    var rightHand = Math.pow(orbitsLengthPower3 / GM, 0.5);
-    var orbitalPer = Math.round(2 * Math.PI * rightHand);
-    obj.orbitalPeriod = orbitalPer;
-    delete obj.avgAlt;
-    return obj;
-  });
+function palindrome(str) {
+  let normalStr = str
+    .split(/[^a-zA-Z\d\s:]/)
+    .join("")
+    .split(" ")
+    .join("")
+    .toLowerCase();
+  let reverseStr = str
+    .split(/[^a-zA-Z\d\s:]/)
+    .join("")
+    .split(" ")
+    .join("")
+    .split("")
+    .reverse()
+    .join("")
+    .toLowerCase();
+  return normalStr === reverseStr;
 }
 
-orbitalPeriod([{ name: "sputnik", avgAlt: 35873.5553 }]);
+palindrome("eye");
