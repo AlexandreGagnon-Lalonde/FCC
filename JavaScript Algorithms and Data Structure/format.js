@@ -1,20 +1,21 @@
-function palindrome(str) {
-  let normalStr = str
-    .split(/[^a-zA-Z\d\s:]/)
-    .join("")
+function rot13(str) {
+  return str
     .split(" ")
-    .join("")
-    .toLowerCase();
-  let reverseStr = str
-    .split(/[^a-zA-Z\d\s:]/)
-    .join("")
-    .split(" ")
-    .join("")
-    .split("")
-    .reverse()
-    .join("")
-    .toLowerCase();
-  return normalStr === reverseStr;
+    .map((word) => {
+      return word
+        .split("")
+        .map((letter) => {
+          if (letter.charCodeAt(0) > 77 && letter.charCodeAt(0) < 91) {
+            return String.fromCharCode(letter.charCodeAt(0) - 13);
+          } else if (letter.charCodeAt(0) > 64 && letter.charCodeAt(0) < 78) {
+            return String.fromCharCode(letter.charCodeAt(0) + 13);
+          } else {
+            return letter;
+          }
+        })
+        .join("");
+    })
+    .join(" ");
 }
 
-palindrome("eye");
+rot13("SERR PBQR PNZC");
