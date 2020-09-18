@@ -1,21 +1,7 @@
-function rot13(str) {
-  return str
-    .split(" ")
-    .map((word) => {
-      return word
-        .split("")
-        .map((letter) => {
-          if (letter.charCodeAt(0) > 77 && letter.charCodeAt(0) < 91) {
-            return String.fromCharCode(letter.charCodeAt(0) - 13);
-          } else if (letter.charCodeAt(0) > 64 && letter.charCodeAt(0) < 78) {
-            return String.fromCharCode(letter.charCodeAt(0) + 13);
-          } else {
-            return letter;
-          }
-        })
-        .join("");
-    })
-    .join(" ");
+function telephoneCheck(str) {
+  return str.match(/^(1|)(-| |)(\(\d{3}\)|\d{3})(-| |)\d{3}(-| |)\d{4}$/g)
+    ? true
+    : false;
 }
 
-rot13("SERR PBQR PNZC");
+telephoneCheck("555-555-5555");
