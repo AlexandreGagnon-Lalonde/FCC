@@ -1,14 +1,19 @@
-class MyComponent extends React.Component {
+class TypesOfFood extends React.Component {
   constructor(props) {
     super(props);
   }
   render() {
-    // change code below this line
     return (
       <div>
-        <h1>{"Hello React!"}</h1>
+        <h1>Types of Food:</h1>
+        {/* change code below this line */}
+        <Fruits />
+        <Vegetables />
+        {/* change code above this line */}
       </div>
     );
-    // change code above this line
   }
 }
+
+// change code below this line
+ReactDOM.render(<TypesOfFood />, document.getElementById("challenge-node"));
