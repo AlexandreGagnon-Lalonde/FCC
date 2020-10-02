@@ -1,25 +1,22 @@
-const CurrentDate = (props) => {
-  return (
-    <div>
-      {/* change code below this line */}
-      <p>The current date is: {props.date}</p>
-      {/* change code above this line */}
-    </div>
-  );
+const Items = (props) => {
+  return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>;
 };
 
-class Calendar extends React.Component {
+Items.defaultProps = {
+  quantity: 0,
+};
+
+class ShoppingCart extends React.Component {
   constructor(props) {
     super(props);
   }
   render() {
-    return (
-      <div>
-        <h3>What date is it?</h3>
-        {/* change code below this line */}
-        <CurrentDate date={Date()} />
-        {/* change code above this line */}
-      </div>
-    );
+    {
+      /* change code below this line */
+    }
+    return <Items quantity={10} />;
+    {
+      /* change code above this line */
+    }
   }
 }
