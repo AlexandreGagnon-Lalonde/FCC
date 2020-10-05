@@ -404,3 +404,98 @@
   }
 
 // Render State in the User Interface
+  class MyComponent extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        name: "freeCodeCamp",
+      };
+    }
+    render() {
+      return (
+        <div>
+          {/* change code below this line */}
+          <h1>{this.state.name}</h1>
+          {/* change code above this line */}
+        </div>
+      );
+    }
+  }
+
+// Render State in the User Interface Another Way
+  class MyComponent extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        name: "freeCodeCamp",
+      };
+    }
+    render() {
+      // change code below this line
+      const name = this.state.name;
+      // change code above this line
+      return (
+        <div>
+          {/* change code below this line */}
+          <h1>{name}</h1>
+          {/* change code above this line */}
+        </div>
+      );
+    }
+  }
+
+// Set State with this.setState
+  class MyComponent extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        name: "Initial State",
+      };
+      this.handleClick = this.handleClick.bind(this);
+    }
+    handleClick() {
+      // change code below this line
+      this.setState({
+        name: "React Rocks!",
+      });
+      // change code above this line
+    }
+    render() {
+      return (
+        <div>
+          <button onClick={this.handleClick}>Click Me</button>
+          <h1>{this.state.name}</h1>
+        </div>
+      );
+    }
+  }
+
+// Bind 'this' to a Class Method
+  class MyComponent extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        text: "Hello",
+      };
+      // change code below this line
+      this.handleClick = this.handleClick.bind(this);
+      // change code above this line
+    }
+    handleClick() {
+      this.setState({
+        text: "You clicked!",
+      });
+    }
+    render() {
+      return (
+        <div>
+          {/* change code below this line */}
+          <button onClick={this.handleClick}>Click Me</button>
+          {/* change code above this line */}
+          <h1>{this.state.text}</h1>
+        </div>
+      );
+    }
+  }
+
+// Use State to Toggle an Element
